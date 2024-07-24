@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/payment.css">
+
+</head>
+<body>
+<div class="container">
+    <form action="payment" method="POST">
+        {% csrf_token %}   
+        <div class="row">
+            <div class="col">
+                <h3 class="title">billing address</h3>
+                <div class="inputBox">
+                    <span>full name :</span>
+                    <input type="text"  name='fullname' placeholder="name">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email"  name='email' placeholder="email">
+                </div>
+                <div class="inputBox">
+                    <span>address :</span>
+                    <input type="text" name='address' placeholder="room - street - locality">
+                </div>
+                <div class="inputBox">
+                    <span>Contact :</span>
+                    <input type="number" name=contact placeholde="contact">
+                </div>
+            </div>
+            <div class="col">
+                <h3 class="title">payment</h3>
+                <div class="mode">
+                    <span> CASH ON DELIVERY </span>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="proceed to checkout" class="submit-btn">
+    </form>
+</div>    
+</body>
+</html>

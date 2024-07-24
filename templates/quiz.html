@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website</title>
+    <link rel="stylesheet" href="/static/quiz.css">
+</head>
+<body>
+    <div class="container">
+        <form action="quiz" method="POST" action="quiz">
+        {% csrf_token %}
+            <div class="form-control">
+                <label for="ques">1.)  What is your Hair-Type??</label>
+                <br><select name="ans1"></br>
+                    <option>Straight</option>
+                    <option>Wavy</option>
+                    <option>Curly</option>
+            </div>
+            {% csrf_token %}   
+            <br></br>
+            
+            <div class="form-control">
+                <label for="ques">2.)What is your Scalp Type?</label>
+                <br><select name="ans2"></br>
+                    <option>Dry</option>
+                    <option>Normal</option>
+                    <option>Oily</option>
+                </select>
+            </div>
+
+            
+            
+            <div class="form-control">
+                <br><label for="ques">3.)Do you suffer with HairFall or Dandruff?</label></br>
+                <select name="ans3">
+                    <option>Hairfall</option>
+                    <option>Dandruff</option>
+                    <option>Both</option>
+                </select>
+            </div>
+
+            <div class="form-control">
+                <br><label for="ques">4.)What are the Three Hair Goals you Want to achieve</label></br>
+                <select name="ans4">
+                    <option>Anti-hairfall, Anti-dandruff and Repair-damage </option>
+                    <option>Volume , Strengthen and Oil control</option>
+                    <option>Anti-frizz, Daily maintenance and deep condition</option>
+                </select>
+            </div>
+
+
+    
+            <button class="btn"><a href="/oorder">SUBMIT</button></a>
+        </form>
+    </div>
+</body>
+</html>

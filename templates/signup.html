@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"  
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/signup.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form action="signup" method="POST">
+        {% csrf_token %}   
+        
+            <div class="form-control">
+                <label for="User Name">UserName</label>
+                <input type="name" id="name" name="username" placeholder="Enter your UserName">
+            </div>
+            
+            <div class="form-control">
+                <label for="First Name">First Name</label>
+                <input type="name" id="name" name="fname" placeholder="Enter your First Name">
+            </div>
+
+            <div class="form-control">
+                <label for="Last Name">Last Name</label>
+                <input type="name" id="name" name="lname" placeholder="Enter your Last Name">
+            </div>
+            
+            <div class="form-control">
+                <label for="Date">Date of Birth</label>
+                <input type="date" id="Date" name="dob" placeholder="Enter your Date of Birth"> 
+                
+            </div>
+     
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="pass1" placeholder="Password">
+            </div>
+
+            <div class="form-control">
+                <label for="Confirm password">Confirm Password</label>
+                <input type="password" id="password" name="pass2" placeholder="Password">
+            </div>
+
+            <button class="btn">Sign Up </button>
+
+            <small>Do have an account? <a href="/signin">Sign In</a></small>
+        </form>
+        <div class="messages">
+            <center>
+                {% for message in messages %}
+                <strong><h3> {{message}} </h3></strong>
+                {% endfor %}
+            </center>
+        </div>
+        
+        
+
+        <div class="flex-container">
+            <img src="../media/signup.jpg" alt="" class="my-image">
+        </div>
+
+</body>
+

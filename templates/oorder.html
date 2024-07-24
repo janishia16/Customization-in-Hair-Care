@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+
+    <link rel="stylesheet" href="/static/oorder.css">
+</head>
+<body>
+{% block content %}   
+{% for order in prdt %}
+    <div class="product">
+        <div class="product-img">
+            <img src="{{order.image.url}}" alt="">
+    
+        </div>
+        <div class="product-listing">
+            <div class="content">
+            <h1 class="name">{{order.pname}}</h1>
+            <p class="info"> Hair care products at your service to help achieve the best outcome of ur Hair...</p>
+            <p class="price">Rs {{order.price}}</p>
+            <div class="btn-and-rating-box">
+                <div class="rating">
+                    <img src="/media/sstar.png" alt="">
+                    <img src="/media/sstar.png" alt="">
+                    <img src="/media/sstar.png" alt="">
+                    <img src="/media/sstar.png" alt="">
+                </div>
+                <a href="/payment"><button class="btn">  Buy Now</button></a>
+            </div>
+            
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
+</body>
+</html>
